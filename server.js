@@ -3,9 +3,21 @@ const mongoose = require('mongoose');
 
 const app = express();
 const path = require('path');
-const cors = require('cors');
+
+
+
 
 const PORT = process.env.PORT || 3000;
+
+const cors = require('cors');
+
+// // const corsOptions ={
+// //     origin: process.env.ALLOWED_CLIENTS.split(',')
+    
+// // }
+
+// app.use(cors(corsOptions));
+
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -15,11 +27,8 @@ connectDB();
 
 //Cors
 
-const corsOptions ={
-    origin: process.env.ALLOWED_CLIENTS.split(',')
-}
 
-app.use(cors(corsOptions));
+
 
 // Template engine
 
